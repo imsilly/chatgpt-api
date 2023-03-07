@@ -17,7 +17,7 @@ app.use(express.json())
 
 app.get('/', async (req, res) => {
   res.status(200).send({
-    message: '守护者AI模块已启动'
+    message: '守护者AI模块已启动（V1.01）'
   })
 })
 
