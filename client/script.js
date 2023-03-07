@@ -5,7 +5,7 @@ const form = document.querySelector('form')
 const chatContainer = document.querySelector('#chat_container')
 
 let loadInterval
-
+console.log('bitmvp AI v1.01');
 function loader(element) {
     element.textContent = ''
 
