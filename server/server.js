@@ -17,7 +17,7 @@ app.use(express.json())
 
 app.get('/', async (req, res) => {
   res.status(200).send({
-    message: '守护者AI模块已启动（V1.01）'
+    message: '守护者AI模块已启动（V1.02）'
   })
 })
 
@@ -39,9 +39,10 @@ app.post('/', async (req, res) => {
       model: "gpt-3.5-turbo",
       messages: [{role: "user", content: `${prompt}`,}],
     });
-
-    res.status(200).send({
-      bot: response.data.choices[0].text
+    console.log(response.data);
+    res.status(200).send({      
+      bot: response.data.choices[0].message
+      //bot: response.data.choices[0].text
     });
 
   } catch (error) {
@@ -50,4 +51,4 @@ app.post('/', async (req, res) => {
   }
 })
 
-app.listen(5000, () => console.log('守护者AI服务已启动'))
+app.listen(5000, () => console.log('守护者AI模块已启动（V1.02）'))
